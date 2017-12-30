@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using IronPython.Hosting;
 using Microsoft.Scripting.Hosting;
+using PythonScriptingPlugin.Forms;
 using ReClassNET;
 using ReClassNET.Plugins;
 
@@ -33,12 +35,19 @@ namespace PythonScriptingPlugin
 			host = pluginHost;
 
 			engine = Python.CreateEngine();
-			engine.Runtime.LoadAssembly(typeof(IntPtr).Assembly);
-			engine.Runtime.LoadAssembly(typeof(Program).Assembly);
+			engine.Runtime.LoadAssembly(typeof(IntPtr).Assembly); // System.dll
+			engine.Runtime.LoadAssembly(typeof(Program).Assembly); // ReClass.NET.exe
 
 			var scriptingMenuItem = new ToolStripMenuItem("Scripts");
 
 			var editorMenuItem = new ToolStripMenuItem("Editor");
+			editorMenuItem.Click += (sender, args) =>
+			{
+				using (var sef = new ScriptEditorForm(new List<ScriptContent>()))
+				{
+					sef.ShowDialog();
+				}
+			};
 			scriptingMenuItem.DropDownItems.Add(editorMenuItem);
 
 			var testMenuItem = new ToolStripMenuItem("Test");
@@ -49,7 +58,8 @@ namespace PythonScriptingPlugin
 logger.Log(LogLevel.Error, str(data[0]))
 logger.Log(LogLevel.Error, str(data[1]))";*/
 
-				var expression = @"for m in process.Modules:
+				var expression = 
+@"for m in process.Modules:
 	logger.Log(LogLevel.Error, m.Name)";
 
 				try

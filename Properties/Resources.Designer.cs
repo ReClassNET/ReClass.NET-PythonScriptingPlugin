@@ -63,6 +63,26 @@ namespace PythonScriptingPlugin.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap B16x16_Button_Add {
+            get {
+                object obj = ResourceManager.GetObject("B16x16_Button_Add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap B16x16_Button_Delete {
+            get {
+                object obj = ResourceManager.GetObject("B16x16_Button_Delete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap B16x16_Logo {
             get {
                 object obj = ResourceManager.GetObject("B16x16_Logo", resourceCulture);
