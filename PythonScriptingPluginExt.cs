@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 using IronPython.Hosting;
 using Microsoft.Scripting.Hosting;
@@ -27,12 +26,7 @@ namespace PythonScriptingPlugin
 				Terminate();
 			}
 
-			if (pluginHost == null)
-			{
-				throw new ArgumentNullException(nameof(pluginHost));
-			}
-
-			host = pluginHost;
+			host = pluginHost ?? throw new ArgumentNullException(nameof(pluginHost));
 
 			engine = Python.CreateEngine();
 			engine.Runtime.LoadAssembly(typeof(IntPtr).Assembly); // System.dll

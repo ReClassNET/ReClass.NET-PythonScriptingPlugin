@@ -35,9 +35,9 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.scriptContentTextBox = new System.Windows.Forms.TextBox();
-			this.addScriptIconButton = new ReClassNET.UI.IconButton();
-			this.bannerBox = new ReClassNET.UI.BannerBox();
-			this.deleteScriptIconButton = new ReClassNET.UI.IconButton();
+			this.addScriptIconButton = new ReClassNET.Controls.IconButton();
+			this.bannerBox = new ReClassNET.Controls.BannerBox();
+			this.deleteScriptIconButton = new ReClassNET.Controls.IconButton();
 			((System.ComponentModel.ISupportInitialize)(this.bannerBox)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -162,7 +162,7 @@
 
 		#endregion
 
-		private ReClassNET.UI.BannerBox bannerBox;
+		private ReClassNET.Controls.BannerBox bannerBox;
 		private System.Windows.Forms.ListBox scriptsListBox;
 		private System.Windows.Forms.TextBox scriptNameTextBox;
 		private System.Windows.Forms.Label label1;
@@ -170,7 +170,7 @@
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.TextBox scriptContentTextBox;
-		private ReClassNET.UI.IconButton addScriptIconButton;
-		private ReClassNET.UI.IconButton deleteScriptIconButton;
+		private ReClassNET.Controls.IconButton addScriptIconButton;
+		private ReClassNET.Controls.IconButton deleteScriptIconButton;
 	}
 }
